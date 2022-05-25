@@ -19,15 +19,16 @@
 part of '../model.dart';
 
 @JsonSerializable()
-class MenuButton {
-  static const COMMANDS = 'commands';
-  static const WEB_APP = 'web_app';
-  static const DEFAULT = 'default';
-
+class MenuButtonCommands implements MenuButton {
+  @override
   String type;
 
-  MenuButton({required this.type});
+  String? text;
+  WebAppInfo? web_app;
 
-  factory MenuButton.fromJson(Map<String, dynamic> json) => _$MenuButtonFromJson(json);
-  Map<String, dynamic> toJson() => _$MenuButtonToJson(this);
+  MenuButtonCommands({this.type = MenuButton.COMMANDS});
+
+  factory MenuButtonCommands.fromJson(Map<String, dynamic> json) => _$MenuButtonCommandsFromJson(json);
+  @override
+  Map<String, dynamic> toJson() => _$MenuButtonCommandsToJson(this);
 }

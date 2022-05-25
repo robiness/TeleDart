@@ -2551,13 +2551,58 @@ Map<String, dynamic> _$MaskPositionToJson(MaskPosition instance) =>
 
 MenuButton _$MenuButtonFromJson(Map<String, dynamic> json) => MenuButton(
       type: json['type'] as String,
-      text: json['text'] as String?,
-      web_app: json['web_app'] == null
-          ? null
-          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MenuButtonToJson(MenuButton instance) {
+Map<String, dynamic> _$MenuButtonToJson(MenuButton instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+    };
+
+MenuButtonCommands _$MenuButtonCommandsFromJson(Map<String, dynamic> json) =>
+    MenuButtonCommands(
+      type: json['type'] as String? ?? MenuButton.COMMANDS,
+    )
+      ..text = json['text'] as String?
+      ..web_app = json['web_app'] == null
+          ? null
+          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>);
+
+Map<String, dynamic> _$MenuButtonCommandsToJson(MenuButtonCommands instance) {
+  final val = <String, dynamic>{
+    'type': instance.type,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('text', instance.text);
+  writeNotNull('web_app', instance.web_app?.toJson());
+  return val;
+}
+
+MenuButtonDefault _$MenuButtonDefaultFromJson(Map<String, dynamic> json) =>
+    MenuButtonDefault(
+      type: json['type'] as String? ?? MenuButton.DEFAULT,
+    );
+
+Map<String, dynamic> _$MenuButtonDefaultToJson(MenuButtonDefault instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+    };
+
+MenuButtonWebApp _$MenuButtonWebAppFromJson(Map<String, dynamic> json) =>
+    MenuButtonWebApp(
+      type: json['type'] as String? ?? MenuButton.COMMANDS,
+    )
+      ..text = json['text'] as String?
+      ..web_app = json['web_app'] == null
+          ? null
+          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>);
+
+Map<String, dynamic> _$MenuButtonWebAppToJson(MenuButtonWebApp instance) {
   final val = <String, dynamic>{
     'type': instance.type,
   };
