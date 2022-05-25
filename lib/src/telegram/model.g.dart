@@ -2596,11 +2596,11 @@ Map<String, dynamic> _$MenuButtonDefaultToJson(MenuButtonDefault instance) =>
 MenuButtonWebApp _$MenuButtonWebAppFromJson(Map<String, dynamic> json) =>
     MenuButtonWebApp(
       type: json['type'] as String? ?? MenuButton.COMMANDS,
-    )
-      ..text = json['text'] as String?
-      ..web_app = json['web_app'] == null
+      text: json['text'] as String?,
+      web_app: json['web_app'] == null
           ? null
-          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>);
+          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$MenuButtonWebAppToJson(MenuButtonWebApp instance) {
   final val = <String, dynamic>{
