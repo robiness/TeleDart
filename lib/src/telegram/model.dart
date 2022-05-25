@@ -101,6 +101,7 @@ part 'models/labeled_price.dart';
 part 'models/location.dart';
 part 'models/login_url.dart';
 part 'models/mask_position.dart';
+part 'models/menu_button.dart';
 part 'models/message.dart';
 part 'models/message_auto_delete_timer_changed.dart';
 part 'models/message_entity.dart';

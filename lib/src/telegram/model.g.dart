@@ -2549,6 +2549,30 @@ Map<String, dynamic> _$MaskPositionToJson(MaskPosition instance) =>
       'scale': instance.scale,
     };
 
+MenuButton _$MenuButtonFromJson(Map<String, dynamic> json) => MenuButton(
+      type: json['type'] as String,
+      text: json['text'] as String?,
+      web_app: json['web_app'] == null
+          ? null
+          : WebAppInfo.fromJson(json['web_app'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$MenuButtonToJson(MenuButton instance) {
+  final val = <String, dynamic>{
+    'type': instance.type,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('text', instance.text);
+  writeNotNull('web_app', instance.web_app?.toJson());
+  return val;
+}
+
 Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       message_id: json['message_id'] as int,
       from: json['from'] == null
