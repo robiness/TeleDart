@@ -1663,6 +1663,14 @@ class Telegram {
     return await HttpClient.httpPost(requestUrl, body: body);
   }
 
+  Future<MenuButton> getChatMenuButton({int? chat_id}) async {
+    var requestUrl = _apiUri('getChatMenuButton');
+    var body = <String, dynamic>{
+      'chat_id': chat_id,
+    };
+    return MenuButton.fromJson(await HttpClient.httpPost(requestUrl, body: body));
+  }
+
   /// Use this method to delete the list of the bot's commands for the given scope and user language
   ///
   /// After deletion, [higher level commands] will be shown to affected users.

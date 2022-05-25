@@ -27,7 +27,7 @@ class MenuButtonWebApp implements MenuButton {
   WebAppInfo? web_app;
 
   MenuButtonWebApp({
-    this.type = MenuButton.COMMANDS,
+    this.type = MenuButton.WEB_APP,
     required this.text,
     required this.web_app,
   });
