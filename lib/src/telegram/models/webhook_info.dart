@@ -44,12 +44,10 @@ class WebhookInfo {
   });
 
   @JsonKey(ignore: true)
-  DateTime? get last_error_date_ =>
-      last_error_date == null ? null : TimeHelper.toDateTime(last_error_date!);
-  set last_error_date_(DateTime? dateTime) => last_error_date =
-      dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
+  DateTime? get last_error_date_ => last_error_date == null ? null : TimeHelper.toDateTime(last_error_date!);
+  set last_error_date_(DateTime? dateTime) =>
+      last_error_date = dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
 
-  factory WebhookInfo.fromJson(Map<String, dynamic> json) =>
-      _$WebhookInfoFromJson(json);
+  factory WebhookInfo.fromJson(Map<String, dynamic> json) => _$WebhookInfoFromJson(json);
   Map<String, dynamic> toJson() => _$WebhookInfoToJson(this);
 }
