@@ -26,9 +26,14 @@ class MenuButtonWebApp implements MenuButton {
   String? text;
   WebAppInfo? web_app;
 
-  MenuButtonWebApp({this.type = MenuButton.COMMANDS});
+  MenuButtonWebApp({
+    this.type = MenuButton.COMMANDS,
+    required this.text,
+    required this.web_app,
+  });
 
   factory MenuButtonWebApp.fromJson(Map<String, dynamic> json) => _$MenuButtonWebAppFromJson(json);
+
   @override
   Map<String, dynamic> toJson() => _$MenuButtonWebAppToJson(this);
 }
