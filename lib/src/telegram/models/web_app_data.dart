@@ -22,13 +22,12 @@ part of '../model.dart';
 ///
 /// https://core.telegram.org/bots/api#webappinfo
 @JsonSerializable()
-class WebAppInfo {
-  String url;
+class WebAppData {
+  String data;
+  String button_text;
 
-  WebAppInfo({
-    required this.url,
-  });
+  WebAppData({required this.data, required this.button_text});
 
-  factory WebAppInfo.fromJson(Map<String, dynamic> json) => _$WebAppInfoFromJson(json);
-  Map<String, dynamic> toJson() => _$WebAppInfoToJson(this);
+  factory WebAppData.fromJson(Map<String, dynamic> json) => _$WebAppDataFromJson(json);
+  Map<String, dynamic> toJson() => _$WebAppDataToJson(this);
 }

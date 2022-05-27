@@ -2595,7 +2595,7 @@ Map<String, dynamic> _$MenuButtonDefaultToJson(MenuButtonDefault instance) =>
 
 MenuButtonWebApp _$MenuButtonWebAppFromJson(Map<String, dynamic> json) =>
     MenuButtonWebApp(
-      type: json['type'] as String? ?? MenuButton.COMMANDS,
+      type: json['type'] as String? ?? MenuButton.WEB_APP,
       text: json['text'] as String?,
       web_app: json['web_app'] == null
           ? null
@@ -3825,6 +3825,17 @@ VoiceChatStarted _$VoiceChatStartedFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$VoiceChatStartedToJson(VoiceChatStarted instance) =>
     <String, dynamic>{};
+
+WebAppData _$WebAppDataFromJson(Map<String, dynamic> json) => WebAppData(
+      data: json['data'] as String,
+      button_text: json['button_text'] as String,
+    );
+
+Map<String, dynamic> _$WebAppDataToJson(WebAppData instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'button_text': instance.button_text,
+    };
 
 WebAppInfo _$WebAppInfoFromJson(Map<String, dynamic> json) => WebAppInfo(
       url: json['url'] as String,
