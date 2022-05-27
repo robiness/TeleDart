@@ -81,6 +81,7 @@ class Message {
   VoiceChatEnded? voice_chat_ended;
   VoiceChatParticipantsInvited? voice_chat_participants_invited;
   InlineKeyboardMarkup? reply_markup;
+  WebAppData? web_app_data;
 
   Message({
     required this.message_id,
@@ -141,6 +142,7 @@ class Message {
     this.voice_chat_ended,
     this.voice_chat_participants_invited,
     this.reply_markup,
+    this.web_app_data,
   });
 
   @JsonKey(ignore: true)
@@ -148,19 +150,14 @@ class Message {
   set date_(DateTime dateTime) => date = TimeHelper.toUnixTime(dateTime);
 
   @JsonKey(ignore: true)
-  DateTime? get forward_date_ =>
-      forward_date == null ? null : TimeHelper.toDateTime(forward_date!);
-  set forward_date_(DateTime? dateTime) =>
-      forward_date = dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
+  DateTime? get forward_date_ => forward_date == null ? null : TimeHelper.toDateTime(forward_date!);
+  set forward_date_(DateTime? dateTime) => forward_date = dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
 
   @JsonKey(ignore: true)
-  DateTime? get edit_date_ =>
-      edit_date == null ? null : TimeHelper.toDateTime(edit_date!);
-  set edit_date_(DateTime? dateTime) =>
-      edit_date = dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
+  DateTime? get edit_date_ => edit_date == null ? null : TimeHelper.toDateTime(edit_date!);
+  set edit_date_(DateTime? dateTime) => edit_date = dateTime == null ? null : TimeHelper.toUnixTime(dateTime);
 
-  factory Message.fromJson(Map<String, dynamic> json) =>
-      _$MessageFromJson(json);
+  factory Message.fromJson(Map<String, dynamic> json) => _$MessageFromJson(json);
   Map<String, dynamic> toJson() => _$MessageToJson(this);
 
   int indexOfEntity(String? type) {
