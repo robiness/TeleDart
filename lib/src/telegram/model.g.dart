@@ -2762,6 +2762,9 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
           ? null
           : InlineKeyboardMarkup.fromJson(
               json['reply_markup'] as Map<String, dynamic>),
+      web_app_data: json['web_app_data'] == null
+          ? null
+          : WebAppData.fromJson(json['web_app_data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MessageToJson(Message instance) {
@@ -2838,6 +2841,7 @@ Map<String, dynamic> _$MessageToJson(Message instance) {
   writeNotNull('voice_chat_participants_invited',
       instance.voice_chat_participants_invited?.toJson());
   writeNotNull('reply_markup', instance.reply_markup?.toJson());
+  writeNotNull('web_app_data', instance.web_app_data?.toJson());
   return val;
 }
 
