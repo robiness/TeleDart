@@ -79,8 +79,7 @@ class TeleDartMessage extends Message {
           group_chat_created: message.group_chat_created,
           supergroup_chat_created: message.supergroup_chat_created,
           channel_chat_created: message.channel_chat_created,
-          message_auto_delete_timer_changed:
-              message.message_auto_delete_timer_changed,
+          message_auto_delete_timer_changed: message.message_auto_delete_timer_changed,
           migrate_to_chat_id: message.migrate_to_chat_id,
           migrate_from_chat_id: message.migrate_from_chat_id,
           pinned_message: message.pinned_message,
@@ -92,9 +91,9 @@ class TeleDartMessage extends Message {
           voice_chat_scheduled: message.voice_chat_scheduled,
           voice_chat_started: message.voice_chat_started,
           voice_chat_ended: message.voice_chat_ended,
-          voice_chat_participants_invited:
-              message.voice_chat_participants_invited,
+          voice_chat_participants_invited: message.voice_chat_participants_invited,
           reply_markup: message.reply_markup,
+          web_app_data: message.web_app_data,
         );
 
   /// Reply to the recieved message with text
